@@ -6,29 +6,59 @@ using System.Threading.Tasks;
 
 namespace comp110_worksheet_6
 {
-	public enum Mark { None, O, X };
+    public enum Mark { None, O, X };
 
-	public class OxoBoard
-	{
-		// Constructor. Perform any necessary data initialisation here.
-		// Uncomment the optional parameters if attempting the stretch goal -- keep the default values to avoid breaking unit tests.
-		public OxoBoard(/* int width = 3, int height = 3, int inARow = 3 */)
-		{
-			throw new NotImplementedException("TODO: implement this function and then remove this exception");
-		}
+    public class OxoBoard
+    {
+        // Constructor. Perform any necessary data initialisation here.
+        // Uncomment the optional parameters if attempting the stretch goal -- keep the default values to avoid breaking unit tests.
+        public OxoBoard(/* int width = 3, int height = 3, int inARow = 3 */) {
+            public int[,] board = new int[3, 3]; //declare list as a 2d array 
+            public int pointerX = 0; //declare x-axis pointer
+            public int pointerY = 0; //declare y-axis pointer
+            //return board;
+    }
+}
+
+ 
+ 
 
 		// Return the contents of the specified square.
-		public Mark GetSquare(int x, int y)
-		{
-			throw new NotImplementedException("TODO: implement this function and then remove this exception");
-		}
+		public Mark GetSquare(int x, int y){
+            if (board(x, y) == Mark.None)
+            {
+                return Mark.None;
+            }
+            else if (board(x, y) == Mark.O)
+            {
+                return Mark.O;
+            }
+            else if (board(x, y) == Mark.X)
+            {
+                return Mark.X;
+            }
+            else { 
+                //error
+            }
+        }
 
 		// If the specified square is currently empty, fill it with mark and return true.
 		// If the square is not empty, leave it as-is and return False.
-		public bool SetSquare(int x, int y, Mark mark)
-		{
-			throw new NotImplementedException("TODO: implement this function and then remove this exception");
-		}
+		public bool SetSquare(int x, int y, Mark mark){
+            if (board(x, y) == mark.None)
+            {
+                board(x, y) == mark
+                return true;
+            }
+            else if (board(x, y) == mark.O || board(x, y) == mark.X)
+            {
+                return false;
+            }
+            else
+            {
+                //error
+            }
+        }
 
 		// If there are still empty squares on the board, return false.
 		// If there are no empty squares, return true.
