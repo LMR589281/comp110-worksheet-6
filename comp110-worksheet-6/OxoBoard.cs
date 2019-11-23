@@ -78,24 +78,18 @@ namespace comp110_worksheet_6
 		// If a player has three in a row, return Mark.O or Mark.X depending on which player.
 		// Otherwise, return Mark.None.
 		public Mark GetWinner(){//sorry for the brute force, baised on top left
-            if (board(0, 0) == Mark.X && board(1, 0) == Mark.X && board(2, 0) == Mark.X) { return Mark.X; }//across 1 for X 
-            else if (board(0, 1) == Mark.X && board(1, 1) == Mark.X && board(2, 1) == Mark.X) { return Mark.X; }//across 2 for X
-            else if (board(0, 2) == Mark.X && board(1, 2) == Mark.X && board(2, 2) == Mark.X) { return Mark.X; }//across 3 for X
-            else if (board(0, 0) == Mark.X && board(0, 1) == Mark.X && board(0, 2) == Mark.X) { return Mark.X; }//up and down 1 for X
-            else if (board(0, 1) == Mark.X && board(1, 1) == Mark.X && board(2, 1) == Mark.X) { return Mark.X; }//up and down 2 for X
-            else if (board(0, 2) == Mark.X && board(1, 2) == Mark.X && board(2, 2) == Mark.X) { return Mark.X; }//up and down 3 for X
-            else if (board(0, 2) == Mark.X && board(1, 1) == Mark.X && board(2, 0) == Mark.X) { return Mark.X; }//diagonal 1 for X
-            else if (board(0, 0) == Mark.X && board(1, 1) == Mark.X && board(2, 2) == Mark.X) { return Mark.X; }//diagonal 2 for X
+            public string[] marks = new string[Mark.X, Mark.O];
 
-            else if (board(0, 0) == Mark.O && board(1, 0) == Mark.O && board(2, 0) == Mark.O) { return Mark.O; }//across 1 for O 
-            else if (board(0, 1) == Mark.O && board(1, 1) == Mark.O && board(2, 1) == Mark.O) { return Mark.O; }//across 2 for O
-            else if (board(0, 2) == Mark.O && board(1, 2) == Mark.O && board(2, 2) == Mark.O) { return Mark.O; }//across 3 for O
-            else if (board(0, 0) == Mark.O && board(0, 1) == Mark.O && board(0, 2) == Mark.O) { return Mark.O; }//up and down 1 for O
-            else if (board(0, 1) == Mark.O && board(1, 1) == Mark.O && board(2, 1) == Mark.O) { return Mark.O; }//up and down 2 for O
-            else if (board(0, 2) == Mark.O && board(1, 2) == Mark.O && board(2, 2) == Mark.O) { return Mark.O; }//up and down 3 for O
-            else if (board(0, 2) == Mark.O && board(1, 1) == Mark.O && board(2, 0) == Mark.O) { return Mark.O; }//diagonal 1 for O
-            else if (board(0, 0) == Mark.O && board(1, 1) == Mark.O && board(2, 2) == Mark.O) { return Mark.O; }//diagonal 2 for O
+            for (int i=0; i< 1; i++) {//loops through once for all X combinations then does all O combinations
 
+            if (board(0, 0) == marks[i] && board(1, 0) == marks[i] && board(2, 0) == marks[i]) { return marks[i]; }//across 1 for X/O 
+            else if (board(0, 1) == marks[i] && board(1, 1) == marks[i] && board(2, 1) == marks[i]) { return marks[i]; }//across 2 for X/O
+            else if (board(0, 2) == marks[i] && board(1, 2) == marks[i] && board(2, 2) == marks[i]) { return marks[i]; }//across 3 for X/O
+            else if (board(0, 0) == marks[i] && board(0, 1) == marks[i] && board(0, 2) == marks[i]) { return marks[i]; }//up and down 1 for X/O
+            else if (board(0, 1) == marks[i] && board(1, 1) == marks[i] && board(2, 1) == marks[i]) { return marks[i]; }//up and down 2 for X/O
+            else if (board(0, 2) == marks[i] && board(1, 2) == marks[i] && board(2, 2) == marks[i]) { return marks[i]; }//up and down 3 for X/O
+            else if (board(0, 2) == marks[i] && board(1, 1) == marks[i] && board(2, 0) == marks[i]) { return marks[i]; }//diagonal 1 for X/O
+            else if (board(0, 0) == marks[i] && board(1, 1) == marks[i] && board(2, 2) == marks[i]) { return marks[i]; }}//diagonal 2 for X/O
     else { return Mark.None; }
 }
 
